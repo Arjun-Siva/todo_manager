@@ -1,0 +1,74 @@
+button{
+    background: #48BB78;
+    border-radius: 4px;
+    border-radius: 4px;
+    width:72px;
+    height:32px;
+    font-size: 14px;
+    color: #FFFFFF;
+    letter-spacing: 0.1px;
+}
+
+.todo_input{
+    background: #FFFFFF;
+    border: 1px solid #BFB8CC;
+    border-radius: 4px;
+    border-radius: 4px;
+}
+
+.container{
+    position: absolute;
+    left: 40%;
+    top: 5%;
+    font-family: 'Lato', sans-serif;
+    color: #453C52;
+    letter-spacing: 0.14px;
+}
+
+.selected{
+    background: #F1EDF7;
+    border-radius: 4px;
+    border-radius: 4px;
+}
+
+.todotext{
+    font-weight: lighter;
+}
+
+input.done{
+    background: #FFFFFF;
+    border: 1px solid #BFB8CC;
+    border-radius: 4px;
+    border-radius: 4px;
+    width:20px;
+    height:20px; 
+}
+
+.date{
+    font-size: 15px;
+    color: #453C52;
+    letter-spacing: 0.09px;
+    padding-left:7%;
+}
+
+#newtext{
+    width:190px;
+    height:32px;
+}
+
+#newdate{
+    width:93px;
+    height:32px;
+    border-right:none;
+}
+
+#overdue{
+    font-size: 18px;
+    color: #C53030;
+    letter-spacing: 0.09px;
+    padding-left: 10%;
+}
+
+#icon{
+    padding-left:30%;
+}

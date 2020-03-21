@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>
+        TodoList
+    </title>
+    <link rel="stylesheet" href="todo-app.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Lato&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="container">
+        <h1>My To-do List</h1>
+        <div class="inputholder">
+            <input type="text" placeholder="What's next?" class="todo_input" id="newtext">
+            <input type="date" class="todo_input" placeholder="" id="newdate">
+            <i class="fa fa-calendar-o" aria-hidden="true"></i>
+            <button>Add</button>
+        </div>
+        <div class="todoscontainer">
+            <h2 class="due">Due today<span class="date">0/4</span></h2>
+            <ul style="list-style-type:none;" class="todos">
+                <li class="row">
+                    <h2 class="todotext"><input type="checkbox" class="done">Type something <span
+                            id="overdue">Overdue</span></h2>
+                </li>
+                <li class="row">
+                    <h2 class="todotext selected"><input type="checkbox" class="done">Type something <i
+                            class="fa fa-trash-o" id="icon"></i></h2>
+                </li>
+            </ul>
+            <h2 class="due">Due Tomorrow<span class="date">0/3</span></h2>
+            <ul style="list-style-type:none;" class="todos">
+                <li class="row">
+                    <h2 class="todotext"><input type="checkbox" class="done">Type something </h2>
+                </li>
+            </ul>
+            <h2 class="due">Remaining<span class="date">0/3</span></h2>
+            <ul style="list-style-type:none;" class="todos">
+                <li class="row">
+                    <h2 class="todotext"><input type="checkbox" class="done">Type something <span class="date">Jan
+                            21</span></h2>
+                </li>
+                <li class="row">
+                    <h2 class="todotext"><input type="checkbox" class="done">Type something <span class="date">Jan
+                            22</span></h2>
+                </li>
+                <li class="row">
+                    <h2 class="todotext"><input type="checkbox" class="done">Type something <span class="date">Jan
+                            23</span></h2>
+                </li>
+            </ul>
+        </div>
+</body>
+
+</html>
