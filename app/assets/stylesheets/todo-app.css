@@ -1,0 +1,146 @@
+body
+{
+    margin: 0 auto;
+    max-width: 600px;
+    font-family: Arial;
+    font-weight: 100;
+ }
+
+ul
+{
+   list-style-type: none;
+
+}
+
+li
+{
+     display:flex;
+     padding:2px 4px;
+     margin-bottom: 20px;
+     align-items: center;
+}
+
+.TodoSection
+{
+    margin-bottom: 20px;
+}
+.TodoMain
+{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.TodoSectionTitle
+{
+   display: flex;
+   align-items: center;
+    margin-bottom: 8px;
+    
+}
+.TodoTitle
+{
+    font-size: large;
+}
+
+.TodoSubtitle
+{
+    font-size: medium;
+}
+
+input[type="date"] {
+    border: 2px solid #bfb8cc;
+    border-radius: 4px;
+    font-size: 16px;
+    background: #ffffff url(./calendar.png) 96% 50% no-repeat;
+  }
+
+  input[type="date"]::-webkit-inner-spin-button {
+    display: none;
+  }
+  input[type="date"]::-webkit-calendar-picker-indicator {
+    opacity: 0;
+  }
+
+ .TodoItem-Container:hover
+ {
+    background-color: #b3b3b3;
+    width:70%
+ }
+
+.TodoItem-delete
+ {
+     margin-left:30px;
+     width: 16px;
+ }
+
+.Img-Trash
+{
+    margin-left:10px;
+    visibility: hidden;
+    width:20px;
+    height: 20px;
+}
+
+.TodoItem-Container:hover img
+{
+     visibility: visible;
+}
+ 
+.TodoItem-DueDate{
+    color:rgb(94, 94, 112);
+    margin-left: 10px;
+    font-size: 12px;
+}
+
+.AddTodo
+{
+     margin-bottom: 10px;
+     display: flex;
+     height: 32px;
+     align-items: stretch;
+     margin-bottom: 24px;
+
+}
+.TodoSectionTitle-Count
+{
+     margin-left: 10px;
+     font-size: 18px;
+     line-height: 1.2;
+    
+}
+.AddTodo-Button
+{
+     background-color: #4CAF50;
+     text-align: center;
+     padding: 5px 10px;
+     border: 1px solid transparent;
+     border-radius: 4px;
+    color: whitesmoke;
+}
+ 
+.AddTodo-Text
+{
+    padding: 6px 12px ;
+    border-radius: 4px;
+    margin-right: 10px;
+    border: 1px solid gray;
+    font-size:14px;
+}
+.AddTodo-Date
+{
+    padding: 6px 12px ;
+    border-radius: 4px;
+    margin-right: 10px;
+    border: 1px solid gray;
+    font-size:14px;
+}
+.TodoCheckbox
+{
+     width: 16px;
+     height: 16px;
+} 
+
+.TodoCheckboxChecked
+{
+    text-decoration: line-through;
+}
