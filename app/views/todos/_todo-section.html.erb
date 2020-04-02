@@ -1,35 +1,29 @@
 <section class="TodoSection">
-                <div class="TodoSectionTitle">
-                    <h2 class="TodoSubtitle"><%=section_title %></h2>
-                    <p class="TodoSectionTitle-Count"><%=todos.completed.count%>/<%=todos.count%></p>
-                </div>
-                <ul>
-
-                <% todos.each do |todo|%>
-
-                    <% if !(todo.completed && hide_completed)%>
-                      <li class="TodoItem-Container">
-                         
-                            
-                                   <% if todo.completed %>
-                                       <input  type="checkbox" checked >
-                                          <div class="TodoCheckboxChecked">
-                                             <%= todo.todo_text %>
-                                          </div>                                
-                                   <% else %>
-                                     <input class="TodoCheckbox" type="checkbox"> 
-                                      <%= todo.todo_text %>
-                                   <%end%>
-
-                               <% if show_due_date %>
-                               <p class="TodoItem-DueDate"> <%= todo.due_date.to_s(:short)%></p>
-                               <%end%>
-                        
-                               <img class="Img-Trash" src="https://cdn.iconscout.com/icon/premium/png-256-thumb/trashcan-7-624482.png" />
-                            
-                        
-                      </li>
-                    <%end%>
-                <% end %>
-                </ul>   
-           </section>
+  <div class="TodoSectionTitle">
+    <h2 class="TodoSubtitle"><%=section_title %></h2>
+    <p class="TodoSectionTitle-Count"><%=todos.completed.count%>/<%=todos.count%></p>
+  </div>
+  <ul class="TodoItem">
+    <% todos.each do |todo|%>
+      <% if !(todo.completed && hide_completed)%>
+        <li>
+          <div class="TodoItem-Container">
+            <% if todo.completed %>
+              <input  type="checkbox" checked >
+                <div class="TodoCheckboxChecked">
+                  <%= todo.todo_text %>
+                </div>                                
+            <% else %>
+              <input class="TodoCheckbox" type="checkbox"> 
+              <%= todo.todo_text %>
+            <%end%>
+            <% if show_due_date %>
+              <p class="TodoItem-DueDate"> <%= todo.due_date.to_s(:short)%></p>
+            <%end%>
+            <img class="Img-Trash" src="https://cdn.iconscout.com/icon/premium/png-256-thumb/trashcan-7-624482.png">
+          </div>
+        </li>
+      <%end%>
+    <% end %>
+  </ul>
+</section>

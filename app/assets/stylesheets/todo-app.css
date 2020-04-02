@@ -5,21 +5,6 @@ body
     font-family: Arial;
     font-weight: 100;
  }
-
-ul
-{
-   list-style-type: none;
-
-}
-
-li
-{
-     display:flex;
-     padding:2px 4px;
-     margin-bottom: 20px;
-     align-items: center;
-}
-
 .TodoSection
 {
     margin-bottom: 20px;
@@ -46,18 +31,32 @@ li
 {
     font-size: medium;
 }
+ 
+.TodoItem-Container
+{
+     display:flex;
+     padding:2px 4px;
+     margin-bottom: 20px;
+     align-items: center;
+     
+     
+}
 
 input[type="date"] {
     border: 2px solid #bfb8cc;
     border-radius: 4px;
     font-size: 16px;
-    background: #ffffff url(./calendar.png) 96% 50% no-repeat;
+    background-image: url("calendar.png");
+  background-position: right top;
+  background-repeat: no-repeat;
+  background-size: contain;
   }
 
   input[type="date"]::-webkit-inner-spin-button {
     display: none;
   }
   input[type="date"]::-webkit-calendar-picker-indicator {
+      width:100%;
     opacity: 0;
   }
 
