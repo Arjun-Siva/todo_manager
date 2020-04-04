@@ -5,6 +5,11 @@ body
     font-family: Arial;
     font-weight: 100;
  }
+ 
+ ul
+ {
+    list-style-type: none;
+ }
 .TodoSection
 {
     margin-bottom: 20px;
@@ -31,15 +36,14 @@ body
 {
     font-size: medium;
 }
+
  
 .TodoItem-Container
 {
      display:flex;
-     padding:2px 4px;
+     padding:2px;
      margin-bottom: 20px;
      align-items: center;
-     
-     
 }
 
 input[type="date"] {
@@ -47,9 +51,9 @@ input[type="date"] {
     border-radius: 4px;
     font-size: 16px;
     background-image: url("calendar.png");
-  background-position: right top;
-  background-repeat: no-repeat;
-  background-size: contain;
+    background-position: right top;
+    background-repeat: no-repeat;
+    background-size: contain;
   }
 
   input[type="date"]::-webkit-inner-spin-button {
