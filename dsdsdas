@@ -1,0 +1,91 @@
+[1mdiff --git a/app/assets/stylesheets/reset.css b/app/assets/stylesheets/reset.css[m
+[1mindex 77ed35d..49613cf 100644[m
+[1m--- a/app/assets/stylesheets/reset.css[m
+[1m+++ b/app/assets/stylesheets/reset.css[m
+[36m@@ -111,7 +111,7 @@[m [minput[type="date"] {[m
+      line-height: 1.2;[m
+     [m
+ }[m
+[31m-.AddTodo-Button[m
+[32m+[m[32m.AddTodo-button[m
+ {[m
+      background-color: #4CAF50;[m
+      text-align: center;[m
+[1mdiff --git a/app/controllers/todos_controller.rb b/app/controllers/todos_controller.rb[m
+[1mindex 6a08514..fcb19c8 100644[m
+[1m--- a/app/controllers/todos_controller.rb[m
+[1m+++ b/app/controllers/todos_controller.rb[m
+[36m@@ -20,8 +20,7 @@[m [mclass TodosController < ApplicationController[m
+       due_date: due_date,[m
+       completed: false,[m
+     )[m
+[31m-    response_text = "Hey your new todo is created with the id #{new_todo.id}"[m
+[31m-    render plain: response_text[m
+[32m+[m[32m    redirect_to todos_path[m
+   end[m
+ [m
+   def update[m
+[1mdiff --git a/app/views/todos/index.html.erb b/app/views/todos/index.html.erb[m
+[1mindex 665c75e..aaa6c51 100644[m
+[1m--- a/app/views/todos/index.html.erb[m
+[1m+++ b/app/views/todos/index.html.erb[m
+[36m@@ -3,11 +3,11 @@[m
+ [m
+         <article>[m
+             <h1 class="TodoTitle">My Todo-List</h1>[m
+[31m-            <section class="AddTodo">[m
+[31m-                <input class="AddTodo-Text" type="text" placeholder="what's next?">[m
+[31m-                <input class="AddTodo-Date" type="date"/>[m
+[31m-                <button class="AddTodo-Button">Add </button>[m
+[31m-            </section>[m
+[32m+[m[32m            <form class="AddTodo" action="/todos" method="POST">[m
+[32m+[m[32m                <input name="todo_text" class="AddTodo-Text" type="text" placeholder="what's next?">[m
+[32m+[m[32m                <input name="due_date" class="AddTodo-Date" type="date"/>[m
+[32m+[m[32m                <input class="AddTodo-button" type="submit" value="Add">[m
+[32m+[m[32m            </form>[m
+ [m
+             <%= render partial: "todo-section", locals:{[m
+                 [m
+[1mdiff --git a/config/environments/production.rb b/config/environments/production.rb[m
+[1mindex 88e9313..2d987a6 100644[m
+[1m--- a/config/environments/production.rb[m
+[1m+++ b/config/environments/production.rb[m
+[36m@@ -11,7 +11,7 @@[m [mRails.application.configure do[m
+   config.eager_load = true[m
+ [m
+   # Full error reports are disabled and caching is turned on.[m
+[31m-  config.consider_all_requests_local       = false[m
+[32m+[m[32m  config.consider_all_requests_local = false[m
+   config.action_controller.perform_caching = true[m
+ [m
+   # Ensures that a master key has been made available in either ENV["RAILS_MASTER_KEY"][m
+[36m@@ -20,7 +20,7 @@[m [mRails.application.configure do[m
+ [m
+   # Disable serving static files from the `/public` folder by default since[m
+   # Apache or NGINX already handles this.[m
+[31m-  config.public_file_server.enabled = ENV['RAILS_SERVE_STATIC_FILES'].present?[m
+[32m+[m[32m  config.public_file_server.enabled = ENV["RAILS_SERVE_STATIC_FILES"].present?[m
+ [m
+   # Compress CSS using a preprocessor.[m
+   # config.assets.css_compressor = :sass[m
+[36m@@ -51,7 +51,7 @@[m [mRails.application.configure do[m
+   config.log_level = :debug[m
+ [m
+   # Prepend all log lines with the following tags.[m
+[31m-  config.log_tags = [ :request_id ][m
+[32m+[m[32m  config.log_tags = [:request_id][m
+ [m
+   # Use a different cache store in production.[m
+   # config.cache_store = :mem_cache_store[m
+[36m@@ -81,9 +81,9 @@[m [mRails.application.configure do[m
+   # config.logger = ActiveSupport::TaggedLogging.new(Syslog::Logger.new 'app-name')[m
+ [m
+   if ENV["RAILS_LOG_TO_STDOUT"].present?[m
+[31m-    logger           = ActiveSupport::Logger.new(STDOUT)[m
+[32m+[m[32m    logger = ActiveSupport::Logger.new(STDOUT)[m
+     logger.formatter = config.log_formatter[m
+[31m-    config.logger    = ActiveSupport::TaggedLogging.new(logger)[m
+[32m+[m[32m    config.logger = ActiveSupport::TaggedLogging.new(logger)[m
+   end[m
+ [m
+   # Do not dump schema after migrations.[m
