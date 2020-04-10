@@ -3,11 +3,11 @@
 
         <article>
             <h1 class="TodoTitle">My Todo-List</h1>
-            <form class="AddTodo" action="/todos" method="POST">
-                <input name="todo_text" class="AddTodo-Text" type="text" placeholder="what's next?">
+            <%= form_with(url: "/todos", method:"post",class: "AddTodo") do %>
+               <input name="todo_text" class="AddTodo-Text" type="text" placeholder="what's next?">
                 <input name="due_date" class="AddTodo-Date" type="date"/>
                 <input class="AddTodo-button" type="submit" value="Add">
-            </form>
+            <% end %>
 
             <%= render partial: "todo-section", locals:{
                 
