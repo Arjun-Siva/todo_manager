@@ -38,19 +38,20 @@ body
 }
 
  
-.TodoItem-Container
+.TodoItem-container
 {
      display:flex;
      padding:2px;
      margin-bottom: 20px;
      align-items: center;
+     text-align: right;
 }
 
 input[type="date"] {
     border: 2px solid #bfb8cc;
     border-radius: 4px;
     font-size: 16px;
-    background-image: url("calendar.png");
+    background-image: url("https://www.netclipart.com/pp/m/104-1044961_calendar-icon-png-date-events-icon-white-png.png");
     background-position: right top;
     background-repeat: no-repeat;
     background-size: contain;
@@ -64,7 +65,7 @@ input[type="date"] {
     opacity: 0;
   }
 
- .TodoItem-Container:hover
+ .TodoItem-container:hover
  {
     background-color: #b3b3b3;
     width:70%
@@ -82,14 +83,15 @@ input[type="date"] {
     visibility: hidden;
     width:20px;
     height: 20px;
+    float: right;
 }
 
-.TodoItem-Container:hover img
+.TodoItem-container:hover input
 {
      visibility: visible;
 }
  
-.TodoItem-DueDate{
+.TodoItem-dueDate{
     color:rgb(94, 94, 112);
     margin-left: 10px;
     font-size: 12px;
@@ -118,7 +120,7 @@ input[type="date"] {
      padding: 5px 10px;
      border: 1px solid transparent;
      border-radius: 4px;
-    color: whitesmoke;
+     color: whitesmoke;
 }
  
 .AddTodo-Text
@@ -143,7 +145,7 @@ input[type="date"] {
      height: 16px;
 } 
 
-.TodoCheckboxChecked
+.TodoItem-completedText
 {
     text-decoration: line-through;
 }
