@@ -6,11 +6,12 @@ class SessionsController < ApplicationController
 
   def create
     user = User.find_by(email: params[:email])
-    if user.authenticate(params[:password])
+    if user != nil && user.authenticate(params[:password])
       session[:current_user_id] = user.id
       redirect_to "/"
     else
-      render plain: "You are not one of us"
+      flash[:error] = "Your login attempt was invalid.Please retry"
+      redirect_to new_session_path
     end
   end
 
